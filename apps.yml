@@ -1,0 +1,33 @@
+name: 'feature-tracker'
+services:
+
+  ft-api-gateway:
+    image: sivaprasadreddy/ft-api-gateway
+    container_name: ft-api-gateway
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - FEATURE_SERVICE_URL=http://ft-feature-service:8081
+    ports:
+      - "8989:8989"
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+
+  ft-feature-service:
+    image: sivaprasadreddy/ft-feature-service
+    container_name: ft-feature-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - DB_URL=jdbc:postgresql://features-db:5432/postgres
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=postgres
+      - OAUTH2_SERVER_URL=http://keycloak:9191
+    ports:
+      - "8081:8081"
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 700m
