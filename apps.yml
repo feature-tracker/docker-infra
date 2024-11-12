@@ -1,5 +1,19 @@
 name: 'feature-tracker'
 services:
+  ft-webapp:
+    image: sivaprasadreddy/ft-webapp
+    container_name: ft-webapp
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - API_GATEWAY_URL=http://ft-api-gateway:8989
+      - OAUTH2_SERVER_URL=http://keycloak:9191
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 700m
 
   ft-api-gateway:
     image: sivaprasadreddy/ft-api-gateway
