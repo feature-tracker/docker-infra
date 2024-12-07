@@ -28,6 +28,9 @@ tasks:
 
   start:
     cmds:
+      - "docker pull sivaprasadreddy/ft-feature-service"
+      - "docker pull sivaprasadreddy/ft-api-gateway"
+      - "docker pull sivaprasadreddy/ft-webapp"
       - "docker compose -f {{.INFRA_DC_FILE}} up -d"
       - task: sleep
       - "docker compose -f {{.APPS_DC_FILE}} up -d"
