@@ -26,6 +26,8 @@ Source: https://github.com/keycloak/keycloak/issues/33800
 ```shell
 docker ps
 
+#get keycloak container_id
+
 docker exec -it <container_id> sh -c \
   "cp -rp /opt/keycloak/data/h2 /tmp ; \
   /opt/keycloak/bin/kc.sh export --dir /opt/keycloak/data/import --realm feature-tracker --users realm_file \
