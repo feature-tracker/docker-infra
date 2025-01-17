@@ -447,6 +447,52 @@
     "notBefore" : 0,
     "groups" : [ ]
   }, {
+    "id" : "80e88b74-5413-4e92-838a-1317481c1ca3",
+    "username" : "daniiltsarev",
+    "firstName" : "Daniil",
+    "lastName" : "Tsarev",
+    "email" : "daniil.tsarev@gmail.com",
+    "emailVerified" : true,
+    "createdTimestamp" : 1737119557841,
+    "enabled" : true,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "9d06715d-2563-436b-b5f9-6ee2de4552a5",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1737119572631,
+      "secretData" : "{\"value\":\"LHtBmSiBtRQDdPWaZ0quaBr7hbCtsGmmPZH9A4dpzxA=\",\"salt\":\"u8H4nGhK3UBV7nvbwNbqGg==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-feature-tracker" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "86608be2-9bc1-4f3d-8b76-072a91c401fe",
+    "username" : "irinapetrovskaya",
+    "firstName" : "Irina",
+    "lastName" : "Petrovskaya",
+    "email" : "irina.petrovskaya@gmail.com",
+    "emailVerified" : true,
+    "createdTimestamp" : 1737119497376,
+    "enabled" : true,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "c33b8e70-8b60-43d8-a302-bdd7d866bcfe",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1737119512288,
+      "secretData" : "{\"value\":\"eLaFn6BrQO0f194aW5KfeEgBXLFjOVucUOCqPFEkJ5c=\",\"salt\":\"IuvfiUBzzsQBfgiodsTbww==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-feature-tracker" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
     "id" : "c9e33b47-2d34-4a4c-ac6e-03ed48612aca",
     "username" : "malagupta",
     "firstName" : "Mala",
@@ -1458,7 +1504,7 @@
       "subType" : "anonymous",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "saml-role-list-mapper", "saml-user-property-mapper", "oidc-sha256-pairwise-sub-mapper", "oidc-usermodel-attribute-mapper", "oidc-usermodel-property-mapper", "oidc-address-mapper", "oidc-full-name-mapper", "saml-user-attribute-mapper" ]
+        "allowed-protocol-mapper-types" : [ "oidc-sha256-pairwise-sub-mapper", "oidc-usermodel-attribute-mapper", "oidc-usermodel-property-mapper", "oidc-full-name-mapper", "saml-role-list-mapper", "saml-user-attribute-mapper", "saml-user-property-mapper", "oidc-address-mapper" ]
       }
     }, {
       "id" : "b40e48fe-568a-48a5-931c-2e3ecfa876a9",
@@ -1483,7 +1529,7 @@
       "subType" : "authenticated",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "saml-role-list-mapper", "saml-user-attribute-mapper", "oidc-sha256-pairwise-sub-mapper", "oidc-full-name-mapper", "oidc-usermodel-property-mapper", "oidc-usermodel-attribute-mapper", "oidc-address-mapper", "saml-user-property-mapper" ]
+        "allowed-protocol-mapper-types" : [ "oidc-usermodel-property-mapper", "oidc-full-name-mapper", "saml-role-list-mapper", "oidc-address-mapper", "oidc-sha256-pairwise-sub-mapper", "oidc-usermodel-attribute-mapper", "saml-user-property-mapper", "saml-user-attribute-mapper" ]
       }
     }, {
       "id" : "4d2d0897-8d3a-413e-9ff1-d27e8c39d9fe",
