@@ -10,6 +10,16 @@ services:
     ports:
       - "55432:5432"
 
+  users-db:
+    image: postgres:17
+    container_name: users-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - "65432:5432"
+
   kafka:
     image: apache/kafka-native:3.8.0
     container_name: kafka

@@ -60,3 +60,19 @@ services:
       resources:
         limits:
           memory: 700m
+
+  ft-user-service:
+    image: sivaprasadreddy/ft-user-service
+    container_name: ft-user-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - DB_URL=jdbc:postgresql://users-db:5432/postgres
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=postgres
+    ports:
+      - "8084:8084"
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 700m
