@@ -29,6 +29,7 @@ tasks:
   start:
     cmds:
       - "docker pull sivaprasadreddy/ft-feature-service"
+      - "docker pull sivaprasadreddy/ft-user-service"
       - "docker pull sivaprasadreddy/ft-notification-service"
       - "docker pull sivaprasadreddy/ft-api-gateway"
       - "docker pull sivaprasadreddy/ft-webapp"
