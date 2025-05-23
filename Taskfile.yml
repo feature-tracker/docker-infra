@@ -32,6 +32,7 @@ tasks:
       - "docker pull sivaprasadreddy/ft-user-service"
       - "docker pull sivaprasadreddy/ft-notification-service"
       - "docker pull sivaprasadreddy/ft-api-gateway"
+      - "docker pull sivaprasadreddy/ft-config-server"
       - "docker pull sivaprasadreddy/ft-webapp"
       - "docker compose -f {{.INFRA_DC_FILE}} up -d"
       - task: sleep
