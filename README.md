@@ -28,11 +28,11 @@ docker ps
 
 #get keycloak container_id
 
-docker exec -it <container_id> sh -c \
+docker exec -it 446f63bf1013 sh -c \
   "cp -rp /opt/keycloak/data/h2 /tmp ; \
-  /opt/keycloak/bin/kc.sh export --dir /opt/keycloak/data/import --realm feature-tracker --users realm_file \
+  /opt/keycloak/bin/kc.sh export --dir /opt/keycloak/data/import --realm sivalabs --users realm_file \
     --db dev-file \
     --db-url 'jdbc:h2:file:/tmp/h2/keycloakdb;NON_KEYWORDS=VALUE'"
 
-docker cp <container_id>:/opt/keycloak/data/import/feature-tracker-realm.json ~/Downloads/feature-tracker-realm.json
+docker cp 446f63bf1013:/opt/keycloak/data/import/sivalabs-realm.json ~/Downloads/sivalabs-realm.json
 ```
