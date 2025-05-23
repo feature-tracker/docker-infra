@@ -21,6 +21,7 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=docker
       - FEATURE_SERVICE_URL=http://ft-feature-service:8081
+      - USER_SERVICE_URL=http://ft-user-service:8084
     ports:
       - "8989:8989"
     restart: unless-stopped
