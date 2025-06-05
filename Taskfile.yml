@@ -34,6 +34,7 @@ tasks:
       - "docker pull sivaprasadreddy/ft-api-gateway"
       - "docker pull sivaprasadreddy/ft-config-server"
       - "docker pull sivaprasadreddy/ft-webapp"
+      - "docker pull sivaprasadreddy/feature-tracker-angular"
       - "docker compose -f {{.INFRA_DC_FILE}} up -d"
       - task: sleep
       - "docker compose -f {{.APPS_DC_FILE}} up -d"

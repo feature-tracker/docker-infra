@@ -16,6 +16,17 @@ services:
         limits:
           memory: 700m
 
+  feature-tracker-angular:
+    image: sivaprasadreddy/feature-tracker-angular
+    container_name: feature-tracker-angular
+    ports:
+      - "4200:4200"
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+
   ft-config-server:
     image: sivaprasadreddy/ft-config-server
     container_name: ft-config-server
