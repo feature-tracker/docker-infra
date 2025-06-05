@@ -5,6 +5,7 @@ services:
     container_name: ft-webapp
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_CONFIG_IMPORT=configserver:http://ft-config-server:8888
       - API_GATEWAY_URL=http://ft-api-gateway:8989
       - OAUTH2_SERVER_URL=http://keycloak:9191
     ports:
@@ -33,6 +34,7 @@ services:
     container_name: ft-api-gateway
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_CONFIG_IMPORT=configserver:http://ft-config-server:8888
       - FEATURE_SERVICE_URL=http://ft-feature-service:8081
       - USER_SERVICE_URL=http://ft-user-service:8084
     ports:
@@ -48,6 +50,7 @@ services:
     container_name: ft-feature-service
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_CONFIG_IMPORT=configserver:http://ft-config-server:8888
       - DB_URL=jdbc:postgresql://features-db:5432/postgres
       - DB_USERNAME=postgres
       - DB_PASSWORD=postgres
@@ -66,6 +69,7 @@ services:
     container_name: ft-notification-service
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_CONFIG_IMPORT=configserver:http://ft-config-server:8888
       - KAFKA_BROKER=kafka:9093
     ports:
       - "8083:8083"
@@ -80,6 +84,7 @@ services:
     container_name: ft-user-service
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_CONFIG_IMPORT=configserver:http://ft-config-server:8888
       - DB_URL=jdbc:postgresql://users-db:5432/postgres
       - DB_USERNAME=postgres
       - DB_PASSWORD=postgres
