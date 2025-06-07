@@ -99,6 +99,7 @@ services:
       - DB_URL=jdbc:postgresql://users-db:5432/postgres
       - DB_USERNAME=postgres
       - DB_PASSWORD=postgres
+      - KEYCLOAK_URL=http://keycloak:9191
     ports:
       - "8084:8084"
     restart: unless-stopped
