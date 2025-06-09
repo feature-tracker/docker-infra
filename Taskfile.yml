@@ -26,7 +26,7 @@ tasks:
       - task: sleep
       - task: start_infra
 
-  start:
+  docker_pull:
     cmds:
       - "docker pull sivaprasadreddy/ft-feature-service"
       - "docker pull sivaprasadreddy/ft-user-service"
@@ -35,6 +35,10 @@ tasks:
       - "docker pull sivaprasadreddy/ft-config-server"
       - "docker pull sivaprasadreddy/ft-webapp"
       - "docker pull sivaprasadreddy/feature-tracker-angular"
+
+  start:
+    cmds:
+      - task: docker_pull
       - "docker compose -f {{.INFRA_DC_FILE}} up -d"
       - task: sleep
       - "docker compose -f {{.APPS_DC_FILE}} up -d"
