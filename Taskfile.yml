@@ -33,7 +33,6 @@ tasks:
       - "docker pull sivaprasadreddy/ft-notification-service"
       - "docker pull sivaprasadreddy/ft-api-gateway"
       - "docker pull sivaprasadreddy/ft-config-server"
-      - "docker pull sivaprasadreddy/ft-webapp"
       - "docker pull sivaprasadreddy/feature-tracker-angular"
 
   start:
