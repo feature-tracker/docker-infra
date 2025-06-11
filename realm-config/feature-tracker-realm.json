@@ -27,7 +27,7 @@
   "oauth2DevicePollingInterval" : 5,
   "enabled" : true,
   "sslRequired" : "external",
-  "registrationAllowed" : false,
+  "registrationAllowed" : true,
   "registrationEmailAsUsername" : false,
   "rememberMe" : false,
   "verifyEmail" : false,
@@ -46,6 +46,22 @@
   "failureFactor" : 30,
   "roles" : {
     "realm" : [ {
+      "id" : "0b4fc036-b80e-491c-9a36-4c0e52d4400b",
+      "name" : "ROLE_USER",
+      "description" : "Normal User",
+      "composite" : false,
+      "clientRole" : false,
+      "containerId" : "64b75421-3a9d-4a86-b355-bca18e82545f",
+      "attributes" : { }
+    }, {
+      "id" : "5befcb66-6848-4a82-b43d-37745ad3cc7d",
+      "name" : "ROLE_ADMIN",
+      "description" : "User with Admin privileges",
+      "composite" : false,
+      "clientRole" : false,
+      "containerId" : "64b75421-3a9d-4a86-b355-bca18e82545f",
+      "attributes" : { }
+    }, {
       "id" : "5a121961-7387-4aaf-a2b6-2093b304ef00",
       "name" : "uma_authorization",
       "description" : "${role_uma_authorization}",
@@ -67,7 +83,7 @@
       "description" : "${role_default-roles}",
       "composite" : true,
       "composites" : {
-        "realm" : [ "offline_access", "uma_authorization" ],
+        "realm" : [ "ROLE_USER", "offline_access", "uma_authorization" ],
         "client" : {
           "account" : [ "manage-account", "view-profile" ]
         }
@@ -248,7 +264,6 @@
       "security-admin-console" : [ ],
       "feature-tracker-webapp" : [ ],
       "admin-cli" : [ ],
-      "feature-tracker-angular" : [ ],
       "account-console" : [ ],
       "broker" : [ {
         "id" : "e3e7b6d3-4fc1-4853-9f99-00bfcbf8cbe7",
@@ -334,7 +349,8 @@
         "clientRole" : true,
         "containerId" : "e5eb2f39-adfc-4da3-9f05-acc92f85c96f",
         "attributes" : { }
-      } ]
+      } ],
+      "feature-tracker-angular" : [ ]
     }
   },
   "groups" : [ ],
@@ -421,7 +437,7 @@
     } ],
     "disableableCredentialTypes" : [ ],
     "requiredActions" : [ ],
-    "realmRoles" : [ "default-roles-feature-tracker" ],
+    "realmRoles" : [ "ROLE_ADMIN", "default-roles-feature-tracker" ],
     "notBefore" : 0,
     "groups" : [ ]
   }, {
@@ -536,7 +552,7 @@
     } ],
     "disableableCredentialTypes" : [ ],
     "requiredActions" : [ ],
-    "realmRoles" : [ "default-roles-feature-tracker" ],
+    "realmRoles" : [ "ROLE_ADMIN", "default-roles-feature-tracker" ],
     "notBefore" : 0,
     "groups" : [ ]
   }, {
@@ -596,7 +612,7 @@
     } ],
     "disableableCredentialTypes" : [ ],
     "requiredActions" : [ ],
-    "realmRoles" : [ "default-roles-feature-tracker" ],
+    "realmRoles" : [ "ROLE_ADMIN", "default-roles-feature-tracker" ],
     "notBefore" : 0,
     "groups" : [ ]
   } ],
@@ -770,6 +786,7 @@
       "oidc.ciba.grant.enabled" : "false",
       "client.secret.creation.time" : "1741870830",
       "backchannel.logout.session.required" : "true",
+      "post.logout.redirect.uris" : "+",
       "oauth2.device.authorization.grant.enabled" : "false",
       "backchannel.logout.revoke.offline.tokens" : "false"
     },
@@ -784,8 +801,9 @@
       "consentRequired" : false,
       "config" : {
         "user.session.note" : "client_id",
-        "id.token.claim" : "true",
         "introspection.token.claim" : "true",
+        "userinfo.token.claim" : "true",
+        "id.token.claim" : "true",
         "access.token.claim" : "true",
         "claim.name" : "client_id",
         "jsonType.label" : "String"
@@ -798,8 +816,9 @@
       "consentRequired" : false,
       "config" : {
         "user.session.note" : "clientHost",
-        "id.token.claim" : "true",
         "introspection.token.claim" : "true",
+        "userinfo.token.claim" : "true",
+        "id.token.claim" : "true",
         "access.token.claim" : "true",
         "claim.name" : "clientHost",
         "jsonType.label" : "String"
@@ -812,8 +831,9 @@
       "consentRequired" : false,
       "config" : {
         "user.session.note" : "clientAddress",
-        "id.token.claim" : "true",
         "introspection.token.claim" : "true",
+        "userinfo.token.claim" : "true",
+        "id.token.claim" : "true",
         "access.token.claim" : "true",
         "claim.name" : "clientAddress",
         "jsonType.label" : "String"
@@ -849,6 +869,7 @@
       "realm_client" : "false",
       "oidc.ciba.grant.enabled" : "false",
       "backchannel.logout.session.required" : "true",
+      "post.logout.redirect.uris" : "+",
       "oauth2.device.authorization.grant.enabled" : "false",
       "backchannel.logout.revoke.offline.tokens" : "false"
     },
@@ -1599,7 +1620,7 @@
       "subType" : "anonymous",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "oidc-full-name-mapper", "saml-user-attribute-mapper", "saml-role-list-mapper", "oidc-usermodel-property-mapper", "oidc-sha256-pairwise-sub-mapper", "oidc-usermodel-attribute-mapper", "saml-user-property-mapper", "oidc-address-mapper" ]
+        "allowed-protocol-mapper-types" : [ "oidc-usermodel-property-mapper", "oidc-sha256-pairwise-sub-mapper", "saml-user-attribute-mapper", "saml-role-list-mapper", "saml-user-property-mapper", "oidc-full-name-mapper", "oidc-address-mapper", "oidc-usermodel-attribute-mapper" ]
       }
     }, {
       "id" : "b40e48fe-568a-48a5-931c-2e3ecfa876a9",
@@ -1624,7 +1645,7 @@
       "subType" : "authenticated",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "oidc-full-name-mapper", "oidc-sha256-pairwise-sub-mapper", "oidc-usermodel-attribute-mapper", "saml-role-list-mapper", "saml-user-property-mapper", "oidc-address-mapper", "saml-user-attribute-mapper", "oidc-usermodel-property-mapper" ]
+        "allowed-protocol-mapper-types" : [ "saml-user-attribute-mapper", "oidc-full-name-mapper", "oidc-usermodel-property-mapper", "oidc-address-mapper", "saml-user-property-mapper", "oidc-usermodel-attribute-mapper", "saml-role-list-mapper", "oidc-sha256-pairwise-sub-mapper" ]
       }
     }, {
       "id" : "4d2d0897-8d3a-413e-9ff1-d27e8c39d9fe",
