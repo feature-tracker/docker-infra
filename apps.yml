@@ -81,6 +81,7 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
       - SPRING_CONFIG_IMPORT=configserver:http://ft-config-server:8888
       - KEYCLOAK_URL=http://keycloak:9191
+      - OAUTH2_SERVER_URL=http://keycloak:9191
     ports:
       - "8084:8084"
     restart: unless-stopped
