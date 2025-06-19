@@ -31,7 +31,7 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
   keycloak:
-    image: quay.io/keycloak/keycloak:26.0.2
+    image: quay.io/keycloak/keycloak:26.0.5
     command: [ 'start-dev', '--import-realm', '--http-port=9191' ]
     container_name: keycloak
     hostname: keycloak

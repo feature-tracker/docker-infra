@@ -2343,7 +2343,7 @@
     "clientSessionMaxLifespan" : "0",
     "organizationsEnabled" : "false"
   },
-  "keycloakVersion" : "26.0.2",
+  "keycloakVersion" : "26.0.5",
   "userManagedAccessAllowed" : false,
   "organizationsEnabled" : false,
   "clientProfiles" : {
