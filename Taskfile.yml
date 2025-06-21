@@ -9,7 +9,11 @@ vars:
 tasks:
   default:
     cmds:
-      - task: build
+      - task: test
+
+  test:
+    cmds:
+      - "./test-all.sh"
 
   build:
     cmds:
