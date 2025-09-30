@@ -2,7 +2,7 @@
 This repository contains the docker compose based infrastructure for running Feature Tracker application.
 
 ## Prerequisites
-* JDK 21 or later
+* JDK 25 or later
 * Docker ([installation instructions](https://docs.docker.com/engine/install/))
 * [Taskfile](https://taskfile.dev/)
 
